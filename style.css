@@ -1,0 +1,457 @@
+/* =============================================
+   MIS HISTORIAS — Hoja de estilos principal
+   Para personalizar colores, busca las variables
+   en :root y cámbialas a tu gusto.
+   ============================================= */
+
+:root {
+  --fondo:        #0a0b0f;
+  --fondo-carta:  #13141a;
+  --borde:        #1e1f26;
+  --borde-hover:  #2e2f3a;
+  --texto:        #f0ede8;
+  --texto-suave:  #9996a8;
+  --texto-muted:  #6b6a78;
+  --acento:       #8b7cf8;
+  --acento-oscuro:#1e1a35;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  padding-bottom: 3rem;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ---- HERO ---- */
+.hero {
+  padding: 3rem 2rem 2rem;
+  border-bottom: 1px solid var(--borde);
+  margin-bottom: 2.5rem;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--texto-muted);
+  margin-bottom: .5rem;
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--texto);
+  letter-spacing: .04em;
+  line-height: 1.1;
+  margin-bottom: .4rem;
+}
+
+.hero-title span { color: var(--acento); }
+
+.hero-subtitle {
+  font-size: 14px;
+  color: var(--texto-muted);
+  font-weight: 300;
+}
+
+/* ---- SECCIONES ---- */
+.seccion,
+.seccion-destacada {
+  padding: 0 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.seccion-label {
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--texto-muted);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.seccion-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--borde);
+}
+
+/* ---- DESTACADO ---- */
+.destacado {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  min-height: 180px;
+  background: var(--fondo-carta);
+  border-radius: 10px;
+  border: 1px solid var(--borde);
+  overflow: hidden;
+  transition: border-color .2s;
+  cursor: pointer;
+}
+
+.destacado:hover { border-color: var(--acento); }
+
+.destacado-portada {
+  background: linear-gradient(135deg, #1e1a35 0%, var(--fondo) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--borde-hover);
+  border-right: 1px solid var(--borde);
+}
+
+.destacado-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.destacado-eyebrow {
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--acento);
+  margin-bottom: .4rem;
+}
+
+.destacado-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--texto);
+  line-height: 1.2;
+  margin-bottom: .6rem;
+}
+
+.destacado-desc {
+  font-size: 13px;
+  color: var(--texto-suave);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.destacado-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-leer {
+  background: var(--acento);
+  color: var(--fondo);
+  border-radius: 5px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  white-space: nowrap;
+}
+
+.progreso-wrap { flex: 1; }
+
+.progreso-label {
+  font-size: 10px;
+  color: var(--texto-muted);
+  margin-bottom: 4px;
+}
+
+.progreso-barra {
+  height: 3px;
+  background: var(--borde);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progreso-fill {
+  height: 100%;
+  background: var(--acento);
+  border-radius: 2px;
+}
+
+/* ---- GRID DE TARJETAS ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 1.2rem;
+}
+
+.tarjeta {
+  background: var(--fondo-carta);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .2s ease;
+  border: 1px solid var(--borde);
+  position: relative;
+  display: block;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  border-color: var(--borde-hover);
+}
+
+.tarjeta:hover .borde-genero { opacity: 1; }
+
+.tarjeta-vacia {
+  border-style: dashed;
+  border-color: var(--borde-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  cursor: default;
+}
+
+.tarjeta-vacia:hover { transform: none; }
+
+/* Línea de color por género (aparece al hover) */
+.borde-genero {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  opacity: 0;
+  transition: opacity .2s ease;
+  border-radius: 8px 8px 0 0;
+}
+
+.g-fantasia     { background: linear-gradient(90deg, #8b7cf8, #c084fc); }
+.g-terror       { background: linear-gradient(90deg, #ef4444, #7f1d1d); }
+.g-romance      { background: linear-gradient(90deg, #f472b6, #be185d); }
+.g-scifi        { background: linear-gradient(90deg, #38bdf8, #0284c7); }
+.g-aventura     { background: linear-gradient(90deg, #fb923c, #b45309); }
+.g-terror-scifi { background: linear-gradient(90deg, #ef4444, #0284c7); }
+/* Agrega más géneros aquí con el patrón .g-nombregenero */
+
+.portada-placeholder {
+  width: 100%;
+  aspect-ratio: 2/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--borde-hover);
+}
+
+/* Para usar imagen real como portada:
+   <img class="portada-img" src="ruta/imagen.jpg" alt="...">  */
+.portada-img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  display: block;
+}
+
+.tarjeta-info { padding: .8rem .9rem; }
+
+.tarjeta-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--texto);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.tarjeta-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tarjeta-estado {
+  font-size: 10px;
+  color: var(--texto-muted);
+  margin-left: auto;
+}
+
+.nueva-badge {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ---- TAGS DE GÉNERO ---- */
+.tag-genero {
+  font-size: 10px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.tag-fantasia     { background: #1e1a35; color: #8b7cf8; }
+.tag-terror       { background: #2d1a1a; color: #f87171; }
+.tag-romance      { background: #2d1a25; color: #f472b6; }
+.tag-scifi        { background: #1a2535; color: #38bdf8; }
+.tag-aventura     { background: #2d2218; color: #fb923c; }
+.tag-terror-scifi { background: #1e1525; color: #b084f8; }
+/* Agrega más tags aquí con el patrón .tag-nombregenero */
+
+/* ---- PANEL DE DETALLE ---- */
+.panel-detalle {
+  background: #0f0c1a;
+  border: 1px solid #2a1f3d;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.panel-icono {
+  font-size: 2.5rem;
+  padding-top: .2rem;
+}
+
+.panel-eyebrow {
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #b084f8;
+  margin-bottom: .3rem;
+}
+
+.panel-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: .5rem;
+}
+
+.panel-desc {
+  font-size: 13px;
+  color: var(--texto-suave);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.tag-estado {
+  font-size: 10px;
+  background: #1e1525;
+  color: #b084f8;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+/* ---- PIE ---- */
+.pie {
+  padding: 2rem 2rem 0;
+  border-top: 1px solid var(--borde);
+  text-align: center;
+  font-size: 12px;
+  color: #3d3c4a;
+}
+
+/* ---- PÁGINA INTERIOR ---- */
+.interior-hero {
+  padding: 2.5rem 2rem 2rem;
+  border-bottom: 1px solid var(--borde);
+  margin-bottom: 2rem;
+}
+
+.interior-back {
+  font-size: 12px;
+  color: var(--texto-muted);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+  transition: color .15s;
+}
+
+.interior-back:hover { color: var(--acento); }
+
+.interior-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--texto);
+  line-height: 1.1;
+  margin-bottom: .6rem;
+}
+
+.interior-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.interior-desc {
+  font-size: 15px;
+  color: var(--texto-suave);
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.interior-cuerpo {
+  padding: 0 2rem;
+}
+
+.bloque {
+  background: var(--fondo-carta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.bloque-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--acento);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.bloque p {
+  font-size: 14px;
+  color: var(--texto-suave);
+  line-height: 1.8;
+  margin-bottom: .8rem;
+}
+
+.bloque p:last-child { margin-bottom: 0; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+  .destacado {
+    grid-template-columns: 1fr;
+  }
+  .destacado-portada {
+    aspect-ratio: 3/1;
+    border-right: none;
+    border-bottom: 1px solid var(--borde);
+  }
+  .interior-titulo { font-size: 1.6rem; }
+}
