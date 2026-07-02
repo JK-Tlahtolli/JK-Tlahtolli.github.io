@@ -5,15 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VOCES — Mis Historias</title>
   <link rel="stylesheet" href="../../style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <nav class="barra">
+    <div class="barra-nav">
+      <a href="../../index.html" class="barra-link">← Inicio</a>
+      <div class="barra-sep"></div>
+      <a href="../../index.html#historias" class="barra-link">Historias</a>
+    </div>
+    <span class="toggle-label">Modo</span>
+    <button class="toggle" id="toggle" aria-label="Cambiar modo">
+      <div class="toggle-circulo"></div>
+    </button>
+  </nav>
 
   <header class="interior-hero">
     <a href="../../index.html" class="interior-back">← Volver al catálogo</a>
     <h1 class="interior-titulo">VOCES</h1>
     <div class="interior-tags">
-      <span class="tag-genero tag-terror-scifi">Terror · Sci-fi</span>
+      <span class="tag">Terror · Sci-fi</span>
       <span class="tag-estado">Concepto — en desarrollo</span>
     </div>
     <p class="interior-desc">
@@ -24,62 +36,41 @@
 
   <main class="interior-cuerpo">
 
-    <!-- PREMISA -->
     <div class="bloque">
       <p class="bloque-titulo">Premisa</p>
-      <p>
-        Escribe aquí la premisa de la historia. ¿Qué pasó en Lemuria?
-        ¿Qué son las voces? ¿Quién las escucha primero?
-      </p>
+      <p>Escribe aquí la premisa de la historia. ¿Qué pasó en Lemuria? ¿Qué son las voces? ¿Quién las escucha primero?</p>
     </div>
 
-    <!-- MUNDO / LORE -->
     <div class="bloque">
       <p class="bloque-titulo">Lemuria — El mundo</p>
-      <p>
-        Agrega aquí notas sobre la ciudad de Lemuria: su geografía, su historia,
-        cómo era antes del evento y cómo es ahora.
-      </p>
-      <p>
-        ¿Qué tipo de sociedad es? ¿Tecnología, magia, o ambas?
-        ¿Las autoridades saben lo que ocurre?
-      </p>
+      <p>Agrega aquí notas sobre la ciudad de Lemuria: su geografía, su historia, cómo era antes del evento y cómo es ahora.</p>
+      <p>¿Qué tipo de sociedad es? ¿Tecnología, magia, o ambas? ¿Las autoridades saben lo que ocurre?</p>
     </div>
 
-    <!-- PERSONAJES -->
     <div class="bloque">
       <p class="bloque-titulo">Personajes</p>
       <p>
-        Agrega aquí a tus personajes. Por ejemplo:
-      </p>
-      <p>
-        <strong style="color: var(--texto)">Nombre del personaje</strong> —
+        <strong style="color:#f0eef8">Nombre del personaje</strong> —
         Breve descripción: quién es, qué rol juega, por qué importa en la historia.
       </p>
     </div>
 
-    <!-- NOTAS DE DESARROLLO -->
     <div class="bloque">
       <p class="bloque-titulo">Notas de desarrollo</p>
-      <p>
-        Espacio libre para ideas, preguntas sin resolver, referencias visuales
-        o cualquier cosa que quieras recordar mientras construyes la historia.
-      </p>
+      <p>Espacio libre para ideas, preguntas sin resolver, referencias visuales o cualquier cosa que quieras recordar.</p>
     </div>
 
-    <!-- CAPÍTULOS (vacío por ahora) -->
     <div class="bloque">
       <p class="bloque-titulo">Capítulos</p>
-      <p style="color: var(--texto-muted); font-style: italic;">
-        Aún sin capítulos escritos. Cuando tengas el primero, agrega un enlace aquí.
-      </p>
+      <p style="color:#6b6885;font-style:italic">Aún sin capítulos escritos. Cuando tengas el primero, agrega un enlace aquí.</p>
     </div>
 
   </main>
 
-  <footer class="pie" style="margin-top: 3rem;">
-    <p>Edita este archivo para agregar tu lore, personajes y capítulos</p>
+  <footer class="interior-pie">
+    Edita este archivo para agregar tu lore, personajes y capítulos
   </footer>
 
+  <script src="../../script.js"></script>
 </body>
 </html>

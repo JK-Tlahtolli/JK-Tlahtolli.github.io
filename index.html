@@ -5,106 +5,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mis Historias</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="hero">
-    <p class="hero-eyebrow">Universos de papel y tinta</p>
-    <h1 class="hero-title">Mis <span>Historias</span></h1>
-    <p class="hero-subtitle">Worldbuilding · Personajes · Lore · Avance creativo</p>
+  <!-- ================================================
+    ZONA 1 — BANNER #222034
+    Para agregar tu imagen cuando la tengas, reemplaza
+    el <div class="banner-placeholder"> por:
+    <img src="imagenes/banner.jpg" alt="Banner" style="width:100%;height:100%;object-fit:cover;">
+  ================================================= -->
+  <header class="banner">
+    <div class="banner-placeholder">
+      <span class="banner-placeholder-icono">🖼</span>
+      <span class="banner-placeholder-texto">Tu imagen aquí</span>
+    </div>
   </header>
 
-  <!-- HISTORIA DESTACADA -->
-  <section class="seccion-destacada">
-    <div class="seccion-label"><span>Historia destacada</span></div>
+  <!-- ================================================
+    ZONA 2 — BARRA DE MENÚ #df7126
+    Agrega o quita enlaces en .barra-nav
+  ================================================= -->
+  <nav class="barra">
+    <div class="barra-nav">
+      <a href="index.html" class="barra-link">Inicio</a>
+      <div class="barra-sep"></div>
+      <a href="#historias" class="barra-link">Historias</a>
+      <div class="barra-sep"></div>
+      <a href="#lore" class="barra-link">Lore</a>
+    </div>
+    <input class="barra-busqueda" type="text" placeholder="Buscar historia..." id="busqueda">
+    <span class="toggle-label">Modo</span>
+    <button class="toggle" id="toggle" aria-label="Cambiar modo claro/oscuro">
+      <div class="toggle-circulo"></div>
+    </button>
+  </nav>
 
-    <a href="historias/cenizas/index.html" class="destacado">
-      <div class="destacado-portada">⚔</div>
-      <div class="destacado-info">
-        <div>
-          <p class="destacado-eyebrow">Fantasía épica · En progreso</p>
-          <h2 class="destacado-titulo">Las Cenizas del Séptimo Sol</h2>
-          <p class="destacado-desc">
-            Un reino dividido por la caída de un dios. Tres herederos, ninguno inocente.
-            La magia se consume a sí misma y el mundo olvida cómo llamar a la luz.
-          </p>
-        </div>
-        <div class="destacado-footer">
-          <span class="btn-leer">Ver historia</span>
-          <div class="progreso-wrap">
-            <p class="progreso-label">Avance: cap. 7 de ~20</p>
-            <div class="progreso-barra"><div class="progreso-fill" style="width: 35%"></div></div>
-          </div>
-        </div>
+  <!-- ================================================
+    ZONA 3 — CARRUSEL #45283c
+    Para agregar una portada: copia un bloque .slide
+    y cambia el emoji/imagen, título y género
+  ================================================= -->
+  <section class="carrusel-wrap">
+    <div class="carrusel-header">
+      <span class="carrusel-titulo">Portadas</span>
+      <div class="carrusel-nav">
+        <button class="nav-btn" id="prev" aria-label="Anterior">&#8592;</button>
+        <button class="nav-btn" id="next" aria-label="Siguiente">&#8594;</button>
       </div>
-    </a>
+    </div>
+    <div class="carrusel-pista-wrap">
+      <div class="carrusel-pista" id="pista">
+
+        <div class="slide" onclick="location.href='historias/cenizas/index.html'">
+          <div class="slide-portada">⚔</div>
+          <p class="slide-titulo">Las Cenizas del Séptimo Sol</p>
+          <span class="slide-tag">Fantasía épica</span>
+        </div>
+
+        <div class="slide" onclick="location.href='historias/voces/index.html'">
+          <div class="slide-portada">📡</div>
+          <p class="slide-titulo">VOCES</p>
+          <span class="slide-tag">Terror · Sci-fi</span>
+        </div>
+
+        <!-- PLANTILLA SLIDE — descomenta y edita para agregar más:
+        <div class="slide" onclick="location.href='historias/tu-historia/index.html'">
+          <div class="slide-portada">🔥</div>
+          <p class="slide-titulo">Título de la historia</p>
+          <span class="slide-tag">Género</span>
+        </div>
+        -->
+
+      </div>
+    </div>
+    <div class="carrusel-dots" id="dots"></div>
   </section>
 
-  <!-- CATÁLOGO -->
-  <section class="seccion">
-    <div class="seccion-label"><span>Todas las historias</span></div>
-    <div class="grid">
+  <!-- ================================================
+    ZONA 4 — CATÁLOGO Y EXTENSIÓN #8f563b
+    Para agregar una tarjeta: copia un bloque .tarjeta
+    y cambia el href, emoji, título, género y estado
+  ================================================= -->
+  <section class="extension" id="historias">
+    <p class="ext-label">Todas las historias</p>
+    <div class="grid" id="grid-historias">
 
-      <!-- VOCES -->
       <a href="historias/voces/index.html" class="tarjeta">
-        <div class="borde-genero g-terror-scifi"></div>
-        <span class="nueva-badge">Nueva</span>
-        <div class="portada-placeholder" style="background: linear-gradient(160deg, #12091e 0%, #0a0f1a 60%, #0a0b0f 100%)">📡</div>
+        <div class="tarjeta-portada">📡</div>
         <div class="tarjeta-info">
           <p class="tarjeta-titulo">VOCES</p>
           <div class="tarjeta-meta">
-            <span class="tag-genero tag-terror-scifi">Terror · Sci-fi</span>
-            <span class="tarjeta-estado">Concepto</span>
+            <span class="tag">Terror · Sci-fi</span>
+            <span class="nueva">Nueva</span>
           </div>
         </div>
       </a>
 
-      <!-- LAS CENIZAS -->
       <a href="historias/cenizas/index.html" class="tarjeta">
-        <div class="borde-genero g-fantasia"></div>
-        <div class="portada-placeholder" style="background: linear-gradient(160deg, #1a1730 0%, #0a0b0f 100%)">⚔</div>
+        <div class="tarjeta-portada">⚔</div>
         <div class="tarjeta-info">
           <p class="tarjeta-titulo">Las Cenizas del Séptimo Sol</p>
           <div class="tarjeta-meta">
-            <span class="tag-genero tag-fantasia">Fantasía</span>
-            <span class="tarjeta-estado">Cap. 7</span>
+            <span class="tag">Fantasía</span>
+            <span class="estado">Cap. 7</span>
           </div>
         </div>
       </a>
 
-      <!-- TARJETA VACÍA PARA NUEVA HISTORIA -->
-      <!-- Para agregar una historia: copia uno de los bloques de arriba,
-           cambia el href, el emoji, título, género y estado -->
-      <div class="tarjeta tarjeta-vacia">
-        <div style="text-align: center; color: #3d3c4a;">
-          <div style="font-size: 2rem; margin-bottom: .5rem">+</div>
-          <p style="font-size: 12px">Tu próxima historia</p>
+      <!-- PLANTILLA TARJETA — descomenta y edita para agregar más:
+      <a href="historias/tu-historia/index.html" class="tarjeta">
+        <div class="tarjeta-portada">🔥</div>
+        <div class="tarjeta-info">
+          <p class="tarjeta-titulo">Título de la historia</p>
+          <div class="tarjeta-meta">
+            <span class="tag">Género</span>
+            <span class="estado">Cap. 1</span>
+          </div>
+        </div>
+      </a>
+      -->
+
+      <div class="tarjeta vacia">
+        <div>
+          <div class="vacia-icono">+</div>
+          <p class="vacia-texto">Nueva historia</p>
         </div>
       </div>
 
-    </div>
-  </section>
-
-  <!-- PANEL DE DETALLE VOCES -->
-  <section class="seccion">
-    <div class="panel-detalle">
-      <div class="panel-icono">📡</div>
-      <div>
-        <p class="panel-eyebrow">Terror · Sci-fi · Nueva historia</p>
-        <h3 class="panel-titulo">VOCES</h3>
-        <p class="panel-desc">
-          Tras un evento en la ciudad de Lemuria, las personas no han estado tranquilas
-          con los extraños susurros que rondan en el aire. ¿Cómo se sobrevive a este mundo?
-        </p>
-        <span class="tag-estado">Concepto — en desarrollo</span>
-      </div>
     </div>
   </section>
 
   <footer class="pie">
-    <p>Edita el HTML para agregar tus propias historias</p>
+    <p>Edita el HTML para agregar tus historias · <a href="https://pages.github.com" target="_blank" style="color:inherit">GitHub Pages</a></p>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

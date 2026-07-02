@@ -5,15 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Las Cenizas del Séptimo Sol — Mis Historias</title>
   <link rel="stylesheet" href="../../style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <nav class="barra">
+    <div class="barra-nav">
+      <a href="../../index.html" class="barra-link">← Inicio</a>
+      <div class="barra-sep"></div>
+      <a href="../../index.html#historias" class="barra-link">Historias</a>
+    </div>
+    <span class="toggle-label">Modo</span>
+    <button class="toggle" id="toggle" aria-label="Cambiar modo">
+      <div class="toggle-circulo"></div>
+    </button>
+  </nav>
 
   <header class="interior-hero">
     <a href="../../index.html" class="interior-back">← Volver al catálogo</a>
     <h1 class="interior-titulo">Las Cenizas del Séptimo Sol</h1>
     <div class="interior-tags">
-      <span class="tag-genero tag-fantasia">Fantasía épica</span>
+      <span class="tag">Fantasía épica</span>
       <span class="tag-estado">Cap. 7 — En progreso</span>
     </div>
     <p class="interior-desc">
@@ -41,16 +53,15 @@
 
     <div class="bloque">
       <p class="bloque-titulo">Capítulos</p>
-      <p style="color: var(--texto-muted); font-style: italic;">
-        Agrega aquí los enlaces a tus capítulos cuando los escribas.
-      </p>
+      <p style="color:#6b6885;font-style:italic">Agrega aquí los enlaces a tus capítulos cuando los escribas.</p>
     </div>
 
   </main>
 
-  <footer class="pie" style="margin-top: 3rem;">
-    <p>Edita este archivo para agregar tu lore, personajes y capítulos</p>
+  <footer class="interior-pie">
+    Edita este archivo para agregar tu lore, personajes y capítulos
   </footer>
 
+  <script src="../../script.js"></script>
 </body>
 </html>
