@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VOCES — Mis Historias</title>
   <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="voces.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,56 +22,98 @@
     </button>
   </nav>
 
-  <header class="interior-hero">
-    <a href="../../index.html" class="interior-back">← Volver al catálogo</a>
-    <h1 class="interior-titulo">VOCES</h1>
-    <div class="interior-tags">
-      <span class="tag">Terror · Sci-fi</span>
-      <span class="tag-estado">Concepto — en desarrollo</span>
+  <!-- HERO -->
+  <!-- Para cambiar el fondo: reemplaza imagenes/fondo-voces.gif por tu archivo -->
+  <!-- Para cambiar el título: reemplaza imagenes/titulo-voces.png por tu archivo -->
+  <div class="historia-hero">
+    <img class="historia-hero-bg" src="imagenes/fondo-voces.gif" alt="Fondo VOCES">
+    <div class="historia-hero-overlay"></div>
+    <a href="../../index.html" class="historia-back">← Volver al catálogo</a>
+    <div class="titulo-img-wrap">
+      <img class="titulo-img" src="imagenes/titulo-voces.png" alt="VOCES">
     </div>
-    <p class="interior-desc">
+  </div>
+
+  <!-- DESCRIPCIÓN FUERA DEL HERO -->
+  <div class="historia-info">
+    <div class="historia-tags">
+      <span class="tag tag-terror-scifi">Terror</span>
+      <span class="tag tag-terror-scifi">Sci-fi</span>
+      <span class="tag tag-acento">Concepto</span>
+    </div>
+    <p class="historia-desc">
       Tras un evento en la ciudad de Lemuria, las personas no han estado tranquilas
       con los extraños susurros que rondan en el aire. ¿Cómo se sobrevive a este mundo?
     </p>
-  </header>
+  </div>
 
-  <main class="interior-cuerpo">
-
-    <div class="bloque">
-      <p class="bloque-titulo">Premisa</p>
-      <p>Escribe aquí la premisa de la historia. ¿Qué pasó en Lemuria? ¿Qué son las voces? ¿Quién las escucha primero?</p>
+  <!-- PESTAÑAS -->
+  <div class="cuerpo">
+    <div class="tabs">
+      <div class="tab activo" onclick="cambiarTab(0)">Capítulos</div>
+      <div class="tab" onclick="cambiarTab(1)">Galería</div>
+      <div class="tab" onclick="cambiarTab(2)">Notas</div>
     </div>
 
-    <div class="bloque">
-      <p class="bloque-titulo">Lemuria — El mundo</p>
-      <p>Agrega aquí notas sobre la ciudad de Lemuria: su geografía, su historia, cómo era antes del evento y cómo es ahora.</p>
-      <p>¿Qué tipo de sociedad es? ¿Tecnología, magia, o ambas? ¿Las autoridades saben lo que ocurre?</p>
+    <!-- CAPÍTULOS -->
+    <div class="panel activo" id="panel-0">
+      <div class="capitulo-lista">
+
+        <!-- PLANTILLA CAPÍTULO — copia y edita para agregar más:
+        <div class="capitulo">
+          <span class="cap-num">01</span>
+          <div class="cap-info">
+            <p class="cap-titulo">Título del capítulo</p>
+            <p class="cap-meta">Estado · N palabras</p>
+          </div>
+          <span class="cap-estado">Publicado</span>
+        </div>
+        -->
+
+        <p class="vacio-texto">Aún no hay capítulos. ¡Empieza a escribir!</p>
+      </div>
     </div>
 
-    <div class="bloque">
-      <p class="bloque-titulo">Personajes</p>
-      <p>
-        <strong style="color:#f0eef8">Nombre del personaje</strong> —
-        Breve descripción: quién es, qué rol juega, por qué importa en la historia.
-      </p>
+    <!-- GALERÍA -->
+    <div class="panel" id="panel-1">
+      <div class="galeria" id="galeria">
+        <!-- Las imágenes se agregan aquí:
+        <div class="galeria-item">
+          <img src="imagenes/arte-1.jpg" alt="Arte de escena">
+        </div>
+        -->
+        <p class="vacio-texto">Aún no hay imágenes en la galería.</p>
+      </div>
     </div>
 
-    <div class="bloque">
-      <p class="bloque-titulo">Notas de desarrollo</p>
-      <p>Espacio libre para ideas, preguntas sin resolver, referencias visuales o cualquier cosa que quieras recordar.</p>
+    <!-- NOTAS -->
+    <div class="panel" id="panel-2">
+      <div id="lista-notas"></div>
+      <button class="btn-nueva" id="btn-nueva">+ Nueva nota</button>
     </div>
-
-    <div class="bloque">
-      <p class="bloque-titulo">Capítulos</p>
-      <p style="color:#6b6885;font-style:italic">Aún sin capítulos escritos. Cuando tengas el primero, agrega un enlace aquí.</p>
-    </div>
-
-  </main>
+  </div>
 
   <footer class="interior-pie">
-    Edita este archivo para agregar tu lore, personajes y capítulos
+    VOCES · Edita este archivo para agregar contenido
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <div class="lb-top">
+      <span class="lb-contador" id="lb-contador"></span>
+      <button class="lb-cerrar" id="lb-cerrar">✕ Cerrar</button>
+    </div>
+    <div class="lb-centro">
+      <button class="lb-btn" id="lb-prev">&#8592;</button>
+      <div class="lb-img-wrap" id="lb-img-wrap"></div>
+      <button class="lb-btn" id="lb-next">&#8594;</button>
+    </div>
+    <div class="lb-miniaturas" id="lb-miniaturas"></div>
+  </div>
+
+  <input type="file" class="file-input" id="file-input" accept="image/*" multiple>
+
   <script src="../../script.js"></script>
+  <script src="notas.js"></script>
 </body>
 </html>
