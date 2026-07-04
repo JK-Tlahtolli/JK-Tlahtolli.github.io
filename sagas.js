@@ -23,9 +23,9 @@
 const sagas = [
   {
     nombre: 'El Ciclo del Vacío',
-    tabImg: null,           // → 'imagenes/saga-vacio-logo.png'
-    bgImg: null,            // → 'imagenes/saga-vacio-bg.jpg'
-    nombreImg: null,        // → 'imagenes/saga-vacio-titulo.png'
+    tabImg: 'imagenes/sagas/LogoSagaALTER_Blanco.png',
+    bgImg: 'imagenes/sagas/PortadaSaga_ALTER.png',
+    nombreImg: 'imagenes/sagas/TituloSaga_ALTER_Negro.png','
     historias: [
       { href: 'historias/voces/index.html',   portadaImg: 'historias/voces/imagenes/VocesPH.png' },
       // Agrega más historias aquí:
