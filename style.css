@@ -514,9 +514,7 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
   scrollbar-width: none;
 }
 
-.saga-tabs-bar::-webkit-scrollbar {
-  display: none;
-}
+.saga-tabs-bar::-webkit-scrollbar { display: none; }
 
 .saga-tab {
   position: relative;
@@ -563,14 +561,12 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
   white-space: nowrap;
 }
 
-/* LAYOUT PRINCIPAL SAGAS */
 .sagas-body {
   display: grid;
   grid-template-columns: 220px 1fr;
   min-height: 280px;
 }
 
-/* PORTADA SAGA */
 .saga-portada-wrap {
   display: flex;
   flex-direction: column;
@@ -602,7 +598,6 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
   background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.1) 60%, transparent 100%);
 }
 
-/* NOMBRE SAGA — pegado abajo */
 .saga-portada-info {
   position: relative;
   z-index: 1;
@@ -639,7 +634,6 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
   color: rgba(255,255,255,.35);
 }
 
-/* HISTORIAS DE LA SAGA */
 .saga-historias-outer {
   display: flex;
   align-items: center;
@@ -674,11 +668,12 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
   gap: 10px;
   transition: transform .35s cubic-bezier(.4,0,.2,1);
   cursor: grab;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .saga-historias-pista:active { cursor: grabbing; }
 .saga-historias-pista::-webkit-scrollbar { display: none; }
-.saga-historias-pista { -ms-overflow-style: none; scrollbar-width: none; }
 
 .saga-historia-slide { flex: 0 0 120px; cursor: pointer; }
 
@@ -707,11 +702,7 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
   transform: scale(1.04);
 }
 
-/* ESTADO EN TARJETAS */
-.estado {
-  font-size: 9px;
-  color: #c9946a;
-}
+.estado { font-size: 9px; color: #c9946a; }
 
 @media (max-width: 600px) {
   .sagas-body { grid-template-columns: 1fr; }
