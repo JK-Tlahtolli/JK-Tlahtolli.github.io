@@ -11,16 +11,15 @@
 
   <!-- ================================================
     ZONA 1 — BANNER #222034
-  Para agregar tu imagen cuando la tengas, reemplaza por:
-    <img src="imagenes/banner.jpg" alt="Banner" style="width:100%;height:100%;object-fit:cover;">
+    Para agregar tu imagen reemplaza el placeholder por:
+    <img src="imagenes/BannerV1.png" alt="Banner" style="width:100%;height:100%;object-fit:cover;">
   ================================================= -->
-  <header class="banner">
+    <header class="banner">
     <img src="imagenes/BannerV1.png" alt="Banner" style="width:100%;height:100%;object-fit:cover;">
   </header>
 
   <!-- ================================================
-    ZONA 2 — BARRA DE MENÚ #df7126
-    Agrega o quita enlaces en .barra-nav
+    ZONA 2 — BARRA #df7126
   ================================================= -->
   <nav class="barra">
     <div class="barra-nav">
@@ -28,19 +27,19 @@
       <div class="barra-sep"></div>
       <a href="#historias" class="barra-link">Historias</a>
       <div class="barra-sep"></div>
-      <a href="#Sagas" class="barra-link">Lore</a>
+      <a href="#sagas" class="barra-link">Sagas</a>
     </div>
     <input class="barra-busqueda" type="text" placeholder="Buscar historia..." id="busqueda">
     <span class="toggle-label">Modo</span>
-    <button class="toggle" id="toggle" aria-label="Cambiar modo claro/oscuro">
+    <button class="toggle" id="toggle" aria-label="Cambiar modo">
       <div class="toggle-circulo"></div>
     </button>
   </nav>
 
   <!-- ================================================
-    ZONA 3 — CARRUSEL #45283c
-    Para agregar una portada: copia un bloque .slide
-    y cambia el emoji/imagen, título y género
+    ZONA 3 — CARRUSEL DE PORTADAS #45283c
+    Para agregar un slide copia un bloque .slide
+    y cambia el href, emoji/imagen, título y género
   ================================================= -->
   <section class="carrusel-wrap">
     <div class="carrusel-header">
@@ -61,17 +60,18 @@
           <span class="slide-tag">Terror · Sci-fi</span>
         </div>
 
-
         <div class="slide" onclick="location.href='historias/cenizas/index.html'">
           <div class="slide-portada">Portada</div>
           <p class="slide-titulo">Yarbatashy</p>
           <span class="slide-tag">Fantasía épica</span>
         </div>
 
-        <!-- PLANTILLA SLIDE — descomenta y edita para agregar más:
+        <!-- PLANTILLA SLIDE — copia y edita para agregar más:
         <div class="slide" onclick="location.href='historias/tu-historia/index.html'">
-          <div class="slide-portada">🔥</div>
-          <p class="slide-titulo">Título de la historia</p>
+          <div class="slide-portada">
+            <img src="historias/tu-historia/imagenes/portada.jpg" alt="Título">
+          </div>
+          <p class="slide-titulo">Título</p>
           <span class="slide-tag">Género</span>
         </div>
         -->
@@ -82,9 +82,35 @@
   </section>
 
   <!-- ================================================
-    ZONA 4 — CATÁLOGO Y EXTENSIÓN #8f563b
-    Para agregar una tarjeta: copia un bloque .tarjeta
-    y cambia el href, emoji, título, género y estado
+    ZONA SAGAS
+    Para agregar una saga edita el array `sagas`
+    en script.js — cada saga tiene:
+      nombre, tabImg, bgImg, nombreImg, historias[]
+  ================================================= -->
+  <section class="sagas-wrap" id="sagas">
+    <div class="saga-tabs-bar" id="saga-tabs"></div>
+    <div class="sagas-body">
+
+      <div class="saga-portada-wrap">
+        <div class="saga-portada-bg" id="saga-bg"></div>
+        <div class="saga-portada-overlay"></div>
+        <div class="saga-portada-info" id="saga-nombre"></div>
+      </div>
+
+      <div class="saga-historias-outer">
+        <button class="saga-flecha" id="saga-prev">&#8592;</button>
+        <div class="saga-historias-pista-wrap">
+          <div class="saga-historias-pista" id="saga-historias"></div>
+        </div>
+        <button class="saga-flecha" id="saga-next">&#8594;</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================================================
+    ZONA 4 — TODAS LAS HISTORIAS #8f563b
+    Para agregar una tarjeta copia un bloque .tarjeta
   ================================================= -->
   <section class="extension" id="historias">
     <p class="ext-label">Todas las historias</p>
@@ -106,7 +132,7 @@
       <!--<a href="historias/cenizas/index.html" class="tarjeta">
         <div class="tarjeta-portada">⚔</div>
         <div class="tarjeta-info">
-          <p class="tarjeta-titulo">Las Cenizas del Séptimo Sol</p>
+          <p class="tarjeta-titulo">Yarbatashy</p>
           <div class="tarjeta-meta">
             <span class="tag">Fantasía</span>
             <span class="estado">Cap. 7</span>
@@ -114,11 +140,13 @@
         </div>
       </a>
 
-       PLANTILLA TARJETA — descomenta y edita para agregar más:
+       PLANTILLA TARJETA:
       <a href="historias/tu-historia/index.html" class="tarjeta">
-        <div class="tarjeta-portada">🔥</div>
+        <div class="tarjeta-portada">
+          <img src="historias/tu-historia/imagenes/portada.jpg" alt="Título">
+        </div>
         <div class="tarjeta-info">
-          <p class="tarjeta-titulo">Título de la historia</p>
+          <p class="tarjeta-titulo">Título</p>
           <div class="tarjeta-meta">
             <span class="tag">Género</span>
             <span class="estado">Cap. 1</span>
@@ -142,5 +170,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="sagas.js"></script>
 </body>
 </html>

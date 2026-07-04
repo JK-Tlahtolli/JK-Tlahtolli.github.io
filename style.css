@@ -498,3 +498,222 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
   .interior-titulo { font-size: 1.6rem; }
   .banner { aspect-ratio: 4/3; }
 }
+
+/* ================================================
+   SECCIÓN SAGAS
+   ================================================ */
+.sagas-wrap { background: #45283c; }
+
+.saga-tabs-bar {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.saga-tabs-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.saga-tab {
+  position: relative;
+  padding: 1rem 1.4rem;
+  cursor: pointer;
+  opacity: .45;
+  transition: opacity .2s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saga-tab:hover { opacity: .75; }
+.saga-tab.activo { opacity: 1; }
+
+.saga-tab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 1rem;
+  right: 1rem;
+  height: 2px;
+  background: transparent;
+  border-radius: 2px;
+  transition: background .2s;
+}
+
+.saga-tab.activo::after { background: #fff; }
+
+.saga-tab img {
+  height: 26px;
+  max-width: 120px;
+  object-fit: contain;
+  display: block;
+}
+
+.saga-tab-texto {
+  font-family: 'Cinzel', serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: .05em;
+  white-space: nowrap;
+}
+
+/* LAYOUT PRINCIPAL SAGAS */
+.sagas-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 280px;
+}
+
+/* PORTADA SAGA */
+.saga-portada-wrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: #2e1a28;
+}
+
+.saga-portada-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  color: #3a2850;
+}
+
+.saga-portada-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .5;
+}
+
+.saga-portada-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.1) 60%, transparent 100%);
+}
+
+/* NOMBRE SAGA — pegado abajo */
+.saga-portada-info {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding: 0 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.saga-nombre-img img {
+  max-width: 140px;
+  max-height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.9));
+}
+
+.saga-nombre-placeholder {
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  border: 1px dashed rgba(255,255,255,.15);
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.saga-nombre-fallback {
+  font-family: 'Cinzel', serif;
+  font-size: 11px;
+  color: rgba(255,255,255,.35);
+}
+
+/* HISTORIAS DE LA SAGA */
+.saga-historias-outer {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: 1.2rem .8rem 1.2rem 1.2rem;
+  overflow: hidden;
+}
+
+.saga-flecha {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  color: #fff;
+  font-size: .95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background .15s;
+}
+
+.saga-flecha:hover { background: rgba(255,255,255,.2); }
+.saga-flecha:disabled { opacity: .15; cursor: default; }
+
+.saga-historias-pista-wrap { overflow: hidden; flex: 1; }
+
+.saga-historias-pista {
+  display: flex;
+  gap: 10px;
+  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  cursor: grab;
+}
+
+.saga-historias-pista:active { cursor: grabbing; }
+.saga-historias-pista::-webkit-scrollbar { display: none; }
+.saga-historias-pista { -ms-overflow-style: none; scrollbar-width: none; }
+
+.saga-historia-slide { flex: 0 0 120px; cursor: pointer; }
+
+.saga-historia-portada {
+  width: 120px;
+  height: 170px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  background: #3a1f32;
+  border: 1px solid rgba(255,255,255,.1);
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+
+.saga-historia-portada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.saga-historia-slide:hover .saga-historia-portada {
+  border-color: #df7126;
+  transform: scale(1.04);
+}
+
+/* ESTADO EN TARJETAS */
+.estado {
+  font-size: 9px;
+  color: #c9946a;
+}
+
+@media (max-width: 600px) {
+  .sagas-body { grid-template-columns: 1fr; }
+  .saga-portada-wrap { min-height: 160px; }
+}
