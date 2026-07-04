@@ -572,7 +572,7 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  background: #2e1a28;
+  background: transparent;
 }
 
 .saga-portada-bg {
