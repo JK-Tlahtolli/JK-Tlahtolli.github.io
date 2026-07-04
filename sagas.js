@@ -1,6 +1,5 @@
 /* =============================================
    SAGAS — Sistema de sagas vinculadas
-   
    Para agregar o editar sagas, modifica el
    array `sagas` de abajo. Cada saga tiene:
    
