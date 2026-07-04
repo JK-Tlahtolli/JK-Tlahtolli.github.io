@@ -595,7 +595,7 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
 .saga-portada-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.1) 60%, transparent 100%);
+  background: none;
 }
 
 .saga-portada-info {
