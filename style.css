@@ -589,7 +589,7 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .5;
+  opacity: 1;
 }
 
 .saga-portada-overlay {
@@ -614,8 +614,7 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
 .saga-nombre-img img {
   max-width: 140px;
   max-height: 50px;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,.9));
+  object-fit: contain;  
 }
 
 .saga-nombre-placeholder {
