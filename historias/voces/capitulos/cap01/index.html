@@ -118,11 +118,24 @@
 window.addEventListener('scroll', actualizarProgreso);
 function actualizarProgreso() {
   const lector = document.getElementById('lector');
-  const total = lector.offsetHeight - window.innerHeight;
-  const scroll = Math.max(0, window.scrollY - lector.offsetTop);
+  const wrap = document.getElementById('lector-wrap');
+  const enFS = !!(document.fullscreenElement || document.webkitFullscreenElement);
+  
+  let scroll, total;
+  if (enFS) {
+    scroll = wrap.scrollTop;
+    total = wrap.scrollHeight - wrap.clientHeight;
+  } else {
+    total = lector.offsetHeight - window.innerHeight;
+    scroll = Math.max(0, window.scrollY - lector.offsetTop);
+  }
   const pct = Math.min(100, (scroll / Math.max(1, total)) * 100);
   document.getElementById('progreso').style.width = pct + '%';
 }
+
+// Escuchar scroll tanto del window como del wrap
+window.addEventListener('scroll', actualizarProgreso);
+document.getElementById('lector-wrap').addEventListener('scroll', actualizarProgreso);
 
   /* ---- PANTALLA COMPLETA (Fullscreen API) ---- */
   let fsActivo = false;
