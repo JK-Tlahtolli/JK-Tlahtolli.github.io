@@ -251,3 +251,6 @@
   .lector-header { flex-direction: column; align-items: flex-start; }
   .lector-footer { flex-direction: column; }
 }
+.lector-wrap:-webkit-full-screen { background: #0a0812; overflow-y: auto; height: 100vh; }
+.lector-wrap:-moz-full-screen    { background: #0a0812; overflow-y: auto; height: 100vh; }
+.lector-wrap:fullscreen          { background: #0a0812; overflow-y: auto; height: 100vh; }
