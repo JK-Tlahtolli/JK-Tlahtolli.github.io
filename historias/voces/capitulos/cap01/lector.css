@@ -2,21 +2,72 @@
    LECTOR DE CÓMIC — Estilos
    ============================================= */
 
+/* BARRA FLOTANTE EN FULLSCREEN */
+.barra-fs {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: #df7126;
+  padding: .5rem 1.5rem;
+  align-items: center;
+  gap: 1rem;
+  z-index: 60;
+  transition: opacity .3s;
+}
+
+.barra-fs.visible { display: flex; }
+.barra-fs.oculta { opacity: 0; pointer-events: none; }
+
 .lector-cap-nombre {
   font-family: 'Cinzel', serif;
   font-size: 12px;
   color: #fff;
   flex: 1;
   text-align: center;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
+.btn-salir {
+  background: rgba(0,0,0,.2);
+  border: 1px solid rgba(255,255,255,.3);
+  color: #fff;
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* BOTÓN PANTALLA COMPLETA */
+.btn-fullscreen {
+  background: rgba(0,0,0,.2);
+  border: 1px solid rgba(255,255,255,.3);
+  color: #fff;
+  border-radius: 5px;
+  padding: 4px 10px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: background .2s;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-fullscreen:hover { background: rgba(0,0,0,.4); }
 
 /* HEADER */
 .lector-header {
   background: #1a1528;
-  padding: 1.5rem 2rem;
+  padding: 1.2rem 2rem;
   border-bottom: 1px solid #2e2545;
   display: flex;
   align-items: center;
@@ -35,15 +86,12 @@
 
 .lector-cap-titulo {
   font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #f0eef8;
 }
 
-.lector-cap-nav {
-  display: flex;
-  gap: .6rem;
-}
+.lector-cap-nav { display: flex; gap: .6rem; }
 
 .cap-nav-btn {
   padding: 6px 14px;
@@ -62,33 +110,52 @@
 .cap-nav-btn:hover:not(:disabled) { border-color: #df7126; color: #df7126; }
 .cap-nav-btn:disabled { opacity: .25; cursor: default; }
 
-/* LECTOR VERTICAL */
+/* LECTOR WRAP */
+.lector-wrap { background: #0e0a18; }
+
+/* LECTOR — páginas centradas */
 .lector {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  gap: 6px;
+  min-height: 400px;
 }
 
 .pagina {
   width: 100%;
-  border-radius: 2px;
+  max-width: 680px;
+  border-radius: 4px;
   overflow: hidden;
   background: #1a1528;
+  box-shadow: 0 4px 24px rgba(0,0,0,.4);
 }
 
-.pagina img {
-  width: 100%;
-  display: block;
+.pagina img { width: 100%; display: block; }
+
+/* MODO PANTALLA COMPLETA */
+.lector-wrap.fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: #0a0812;
+  overflow-y: auto;
+}
+
+.lector-wrap.fullscreen .lector {
+  padding: 4rem 1rem 2rem;
+}
+
+.lector-wrap.fullscreen .pagina {
+  max-width: min(680px, 92vw);
 }
 
 /* FOOTER */
 .lector-footer {
   background: #1a1528;
   border-top: 1px solid #2e2545;
-  padding: 1.5rem 2rem;
+  padding: 1.2rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -96,7 +163,7 @@
   gap: 1rem;
 }
 
-.lector-progreso { flex: 1; max-width: 300px; }
+.lector-progreso { flex: 1; max-width: 280px; }
 
 .progreso-label {
   font-size: 10px;
@@ -118,7 +185,7 @@
   background: #df7126;
   border-radius: 2px;
   width: 0%;
-  transition: width .3s;
+  transition: width .2s;
 }
 
 .lector-nav { display: flex; gap: .6rem; }
@@ -167,8 +234,20 @@
   margin-bottom: 1rem;
 }
 
+.capitulo.activo-cap { border-color: #df7126; }
+
+.interior-pie {
+  background: #1a1528;
+  padding: 1.2rem 2rem;
+  border-top: 1px solid #2e2545;
+  font-size: 11px;
+  color: #6b6885;
+  text-align: center;
+  letter-spacing: .05em;
+}
+
+/* RESPONSIVE */
 @media (max-width: 600px) {
   .lector-header { flex-direction: column; align-items: flex-start; }
-  .lector { padding: .5rem; }
   .lector-footer { flex-direction: column; }
 }
