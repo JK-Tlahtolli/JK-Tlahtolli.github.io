@@ -114,54 +114,69 @@
   </footer>
 
   <script>
-    /* ---- PROGRESO ---- */
-    window.addEventListener('scroll', actualizarProgreso);
-    function actualizarProgreso() {
-      const lector = document.getElementById('lector');
-      const total = lector.offsetHeight - window.innerHeight;
-      const scroll = Math.max(0, window.scrollY - lector.offsetTop);
-      const pct = Math.min(100, (scroll / Math.max(1, total)) * 100);
-      document.getElementById('progreso').style.width = pct + '%';
-    }
+/* ---- PROGRESO ---- */
+window.addEventListener('scroll', actualizarProgreso);
+function actualizarProgreso() {
+  const lector = document.getElementById('lector');
+  const total = lector.offsetHeight - window.innerHeight;
+  const scroll = Math.max(0, window.scrollY - lector.offsetTop);
+  const pct = Math.min(100, (scroll / Math.max(1, total)) * 100);
+  document.getElementById('progreso').style.width = pct + '%';
+}
 
-    /* ---- PANTALLA COMPLETA ---- */
-    let fsActivo = false;
-    let timerFS;
+  /* ---- PANTALLA COMPLETA (Fullscreen API) ---- */
+  let fsActivo = false;
+  let timerFS;
 
-    function entrarFS() {
-      document.getElementById('lector-wrap').classList.add('fullscreen');
-      document.getElementById('barra-fs').classList.add('visible');
-      document.getElementById('barra-normal').style.display = 'none';
-      fsActivo = true;
+  function entrarFS() {
+    const wrap = document.getElementById('lector-wrap');
+    if (wrap.requestFullscreen) wrap.requestFullscreen();
+    else if (wrap.webkitRequestFullscreen) wrap.webkitRequestFullscreen();
+    else if (wrap.mozRequestFullScreen) wrap.mozRequestFullScreen();
+  }
+
+  function salirFS() {
+    if (document.exitFullscreen) document.exitFullscreen();
+    else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+  }
+
+  document.addEventListener('fullscreenchange', manejarCambioFS);
+  document.addEventListener('webkitfullscreenchange', manejarCambioFS);
+
+  function manejarCambioFS() {
+    fsActivo = !!(document.fullscreenElement || document.webkitFullscreenElement);
+    const barraFS = document.getElementById('barra-fs');
+    const barraNormal = document.getElementById('barra-normal');
+
+    if (fsActivo) {
+      barraFS.classList.add('visible');
+      barraNormal.style.display = 'none';
       activarAutoOcultar();
-    }
-
-    function salirFS() {
-      document.getElementById('lector-wrap').classList.remove('fullscreen');
-      const barraFS = document.getElementById('barra-fs');
+    } else {
       barraFS.classList.remove('visible');
       barraFS.classList.remove('oculta');
-      document.getElementById('barra-normal').style.display = '';
-      fsActivo = false;
+      barraNormal.style.display = '';
       clearTimeout(timerFS);
     }
+  }
 
-    function activarAutoOcultar() {
-      const barraFS = document.getElementById('barra-fs');
-      const wrap = document.getElementById('lector-wrap');
-      function mostrar() {
-        barraFS.classList.remove('oculta');
-        clearTimeout(timerFS);
-        timerFS = setTimeout(() => { if (fsActivo) barraFS.classList.add('oculta'); }, 2500);
-      }
-      wrap.addEventListener('mousemove', mostrar);
-      wrap.addEventListener('scroll', mostrar);
-      mostrar();
+  function activarAutoOcultar() {
+    const barraFS = document.getElementById('barra-fs');
+    const wrap = document.getElementById('lector-wrap');
+    function mostrar() {
+      barraFS.classList.remove('oculta');
+      clearTimeout(timerFS);
+      timerFS = setTimeout(() => { if (fsActivo) barraFS.classList.add('oculta'); }, 2500);
     }
+    wrap.addEventListener('mousemove', mostrar);
+    wrap.addEventListener('scroll', mostrar);
+    mostrar();
+  }
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && fsActivo) salirFS();
-    });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && fsActivo) salirFS();
+  });
   </script>
 
 </body>
