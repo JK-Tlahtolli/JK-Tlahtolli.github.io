@@ -59,7 +59,7 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   padding: 2rem;
 }
@@ -477,4 +477,57 @@
   text-transform: uppercase;
   padding: 3px 9px;
   border-radius: 3px;
+}
+
+/* ================================================
+   LISTA DE CAPÍTULOS
+   ================================================ */
+.capitulo-lista { display: flex; flex-direction: column; gap: .7rem; }
+
+.capitulo {
+  background: #221937;
+  border: 1px solid #2e2545;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .2s, background .2s;
+}
+
+.capitulo:hover { border-color: #df7126; background: #2a1f40; }
+
+.cap-thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 5px;
+  background: #3a1f32;
+  border: 1px solid #2e2545;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.cap-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.cap-num {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #df7126;
+  min-width: 28px;
+}
+
+.cap-info { flex: 1; }
+
+.cap-titulo-item {
+  font-size: 13px;
+  font-weight: 500;
+  color: #e8e6f0;
 }

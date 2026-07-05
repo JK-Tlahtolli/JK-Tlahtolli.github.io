@@ -1,0 +1,174 @@
+/* =============================================
+   LECTOR DE CÓMIC — Estilos
+   ============================================= */
+
+.lector-cap-nombre {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  color: #fff;
+  flex: 1;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* HEADER */
+.lector-header {
+  background: #1a1528;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #2e2545;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.lector-cap-num {
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #df7126;
+  margin-bottom: .3rem;
+}
+
+.lector-cap-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f0eef8;
+}
+
+.lector-cap-nav {
+  display: flex;
+  gap: .6rem;
+}
+
+.cap-nav-btn {
+  padding: 6px 14px;
+  border-radius: 5px;
+  border: 1px solid #2e2545;
+  background: transparent;
+  color: #c9bce8;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: border-color .2s, color .2s;
+}
+
+.cap-nav-btn:hover:not(:disabled) { border-color: #df7126; color: #df7126; }
+.cap-nav-btn:disabled { opacity: .25; cursor: default; }
+
+/* LECTOR VERTICAL */
+.lector {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pagina {
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  background: #1a1528;
+}
+
+.pagina img {
+  width: 100%;
+  display: block;
+}
+
+/* FOOTER */
+.lector-footer {
+  background: #1a1528;
+  border-top: 1px solid #2e2545;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.lector-progreso { flex: 1; max-width: 300px; }
+
+.progreso-label {
+  font-size: 10px;
+  color: #7a6e95;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .4rem;
+}
+
+.progreso-barra {
+  height: 3px;
+  background: #2e2545;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progreso-fill {
+  height: 100%;
+  background: #df7126;
+  border-radius: 2px;
+  width: 0%;
+  transition: width .3s;
+}
+
+.lector-nav { display: flex; gap: .6rem; }
+
+.btn-cap {
+  padding: 7px 16px;
+  border-radius: 5px;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all .2s;
+}
+
+.btn-prev {
+  border: 1px solid #2e2545;
+  background: transparent;
+  color: #c9bce8;
+}
+
+.btn-prev:hover:not(:disabled) { border-color: #df7126; color: #df7126; }
+
+.btn-next {
+  border: none;
+  background: #df7126;
+  color: #0e0a18;
+  font-weight: 600;
+}
+
+.btn-next:hover:not(:disabled) { background: #c8621f; }
+.btn-next:disabled { opacity: .25; cursor: default; }
+
+/* LISTA DE CAPÍTULOS */
+.lector-capitulos {
+  background: #1a1528;
+  padding: 2rem;
+  border-top: 1px solid #2e2545;
+}
+
+.lector-capitulos-label {
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #7a6e95;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .lector-header { flex-direction: column; align-items: flex-start; }
+  .lector { padding: .5rem; }
+  .lector-footer { flex-direction: column; }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VOCES — Cap. 01: Los susurros comienzan</title>
+  <link rel="stylesheet" href="../../../../style.css">
+  <link rel="stylesheet" href="../../voces.css">
+  <link rel="stylesheet" href="lector.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- BARRA FIJA -->
+  <nav class="barra">
+    <div class="barra-nav">
+      <a href="../../index.html" class="barra-link">← VOCES</a>
+    </div>
+    <span class="lector-cap-nombre">Capítulo 01 — Los susurros comienzan</span>
+  </nav>
+
+  <!-- HEADER DEL CAPÍTULO -->
+  <div class="lector-header">
+    <div class="lector-header-info">
+      <p class="lector-cap-num">Capítulo 01</p>
+      <h1 class="lector-cap-titulo">Los susurros comienzan</h1>
+    </div>
+    <div class="lector-cap-nav">
+      <button class="cap-nav-btn" disabled>← Anterior</button>
+      <!-- Cuando haya cap 02, cambia disabled por: onclick="location.href='../cap02/index.html'" -->
+      <button class="cap-nav-btn" disabled>Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- PÁGINAS DEL CÓMIC -->
+  <!-- Para agregar páginas copia el bloque .pagina y cambia la ruta de la imagen -->
+  <div class="lector" id="lector">
+
+    <div class="pagina">
+      <img src="pag01.jpg" alt="Página 1">
+    </div>
+    <div class="pagina">
+      <img src="pag02.jpg" alt="Página 2">
+    </div>
+    <div class="pagina">
+      <img src="pag03.jpg" alt="Página 3">
+    </div>
+
+    <!--
+    PLANTILLA — copia para agregar más páginas:
+    <div class="pagina">
+      <img src="pag04.jpg" alt="Página 4">
+    </div>
+    -->
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="lector-footer">
+    <div class="lector-progreso">
+      <p class="progreso-label">Progreso</p>
+      <div class="progreso-barra">
+        <div class="progreso-fill" id="progreso"></div>
+      </div>
+    </div>
+    <div class="lector-nav">
+      <button class="btn-cap btn-prev" onclick="location.href='../../index.html'">← Volver a VOCES</button>
+      <button class="btn-cap btn-next" disabled>Cap. siguiente →</button>
+    </div>
+  </div>
+
+  <!-- LISTA DE CAPÍTULOS -->
+  <div class="lector-capitulos">
+    <p class="lector-capitulos-label">Todos los capítulos</p>
+    <div class="capitulo-lista">
+
+      <a href="../cap01/index.html" class="capitulo" style="border-color:#df7126">
+        <div class="cap-thumb">🖼</div>
+        <span class="cap-num">01</span>
+        <div class="cap-info">
+          <p class="cap-titulo-item">Los susurros comienzan</p>
+        </div>
+      </a>
+
+      <!-- PLANTILLA — copia para agregar más capítulos:
+      <a href="../cap02/index.html" class="capitulo">
+        <div class="cap-thumb">
+          <img src="../cap02/pag01.jpg" alt="Cap 02">
+        </div>
+        <span class="cap-num">02</span>
+        <div class="cap-info">
+          <p class="cap-titulo-item">Título del capítulo</p>
+        </div>
+      </a>
+      -->
+
+    </div>
+  </div>
+
+  <footer class="interior-pie">
+    VOCES · Cap. 01
+  </footer>
+
+  <script>
+    // Barra de progreso al hacer scroll
+    window.addEventListener('scroll', () => {
+      const lector = document.getElementById('lector');
+      const total = lector.offsetHeight - window.innerHeight;
+      const scroll = Math.max(0, window.scrollY - lector.offsetTop);
+      const pct = Math.min(100, (scroll / total) * 100);
+      document.getElementById('progreso').style.width = pct + '%';
+    });
+  </script>
+
+</body>
+</html>
