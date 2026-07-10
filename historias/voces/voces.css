@@ -478,6 +478,17 @@
   padding: 3px 9px;
   border-radius: 3px;
 }
+.tags{
+  background: rgba(180,100,255,.2);
+  color: #d4a8ff;
+  border: 1px solid rgba(180,100,255,.3);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 3px;
+}
+
 
 /* ================================================
    LISTA DE CAPÍTULOS
