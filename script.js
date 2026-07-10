@@ -2,18 +2,6 @@
    MIS HISTORIAS — JavaScript
    ============================================= */
 
-/* ---- MODO CLARO / OSCURO ---- */
-const toggle = document.getElementById('toggle');
-const body = document.body;
-
-const modoGuardado = localStorage.getItem('modo');
-if (modoGuardado === 'oscuro') body.classList.add('oscuro');
-
-toggle.addEventListener('click', () => {
-  body.classList.toggle('oscuro');
-  localStorage.setItem('modo', body.classList.contains('oscuro') ? 'oscuro' : 'claro');
-});
-
 /* ---- CARRUSEL ---- */
 const pista = document.getElementById('pista');
 const dotsWrap = document.getElementById('dots');
@@ -54,4 +42,26 @@ if (busqueda) {
       tarjeta.classList.toggle('oculta', texto !== '' && !titulo.includes(texto) && !tag.includes(texto));
     });
   });
+}
+
+/* ---- FILTRO DE GÉNEROS ---- */
+function filtrarGenero(el) {
+  const genero = el.dataset.genero;
+
+  document.querySelectorAll('.genero').forEach(g => g.classList.remove('activo'));
+  el.classList.add('activo');
+
+  const sinResultados = document.getElementById('sin-resultados');
+  let visibles = 0;
+
+  document.querySelectorAll('.tarjeta:not(.vacia)').forEach(t => {
+    const generos = t.dataset.generos || '';
+    const mostrar = genero === 'todos' || generos.includes(genero);
+    t.classList.toggle('oculta', !mostrar);
+    if (mostrar) visibles++;
+  });
+
+  if (sinResultados) {
+    sinResultados.classList.toggle('visible', visibles === 0);
+  }
 }

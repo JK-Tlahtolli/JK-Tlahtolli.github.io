@@ -22,10 +22,6 @@
       <a href="#sagas" class="barra-link">Sagas</a>
     </div>
     <input class="barra-busqueda" type="text" placeholder="Buscar historia..." id="busqueda">
-    <span class="toggle-label">Modo</span>
-    <button class="toggle" id="toggle" aria-label="Cambiar modo">
-      <div class="toggle-circulo"></div>
-    </button>
   </nav>
 
   <section class="carrusel-wrap">
@@ -86,11 +82,60 @@
     </div>
   </section>
 
+  <!-- GÉNEROS -->
+  <section class="generos-wrap">
+    <p class="generos-label">Géneros</p>
+    <div class="generos-lista">
+
+      <div class="genero activo" data-genero="todos" onclick="filtrarGenero(this)">
+        <div class="genero-icono">
+          <!-- Con imagen: <img src="imagenes/generos/todos.png" alt="Todos"> -->
+          <span class="genero-icono-emoji">📚</span>
+        </div>
+        <span class="genero-nombre">Todos</span>
+      </div>
+
+      <div class="genero" data-genero="terror" onclick="filtrarGenero(this)">
+        <div class="genero-icono">
+          <!-- Con imagen: <img src="imagenes/generos/terror.png" alt="Terror"> -->
+          <span class="genero-icono-emoji">💀</span>
+        </div>
+        <span class="genero-nombre">Terror</span>
+      </div>
+
+      <div class="genero" data-genero="sci-fi" onclick="filtrarGenero(this)">
+        <div class="genero-icono">
+          <!-- Con imagen: <img src="imagenes/generos/scifi.png" alt="Sci-fi"> -->
+          <span class="genero-icono-emoji">🛸</span>
+        </div>
+        <span class="genero-nombre">Sci-fi</span>
+      </div>
+
+      <div class="genero" data-genero="fantasia" onclick="filtrarGenero(this)">
+        <div class="genero-icono">
+          <span class="genero-icono-emoji">⚔</span>
+        </div>
+        <span class="genero-nombre">Fantasía</span>
+      </div>
+
+      <!-- PLANTILLA — copia para agregar más géneros:
+      <div class="genero" data-genero="nombre-genero" onclick="filtrarGenero(this)">
+        <div class="genero-icono">
+          <img src="imagenes/generos/nombre.png" alt="Género">
+        </div>
+        <span class="genero-nombre">Nombre</span>
+      </div>
+      -->
+
+    </div>
+  </section>
+
   <section class="extension" id="historias">
     <p class="ext-label">Todas las historias</p>
+    <p class="sin-resultados" id="sin-resultados">No hay historias en este género todavía.</p>
     <div class="grid" id="grid-historias">
 
-      <a href="historias/voces/index.html" class="tarjeta">
+      <a href="historias/voces/index.html" class="tarjeta" data-generos="terror sci-fi">
         <div class="tarjeta-portada">
           <img src="historias/voces/imagenes/VocesPH.png" alt="VOCES">
         </div>
