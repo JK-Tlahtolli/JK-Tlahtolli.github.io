@@ -674,11 +674,11 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
 .saga-historias-pista:active { cursor: grabbing; }
 .saga-historias-pista::-webkit-scrollbar { display: none; }
 
-.saga-historia-slide { flex: 0 0 120px; cursor: pointer; }
+.saga-historia-slide { flex: 0 0 160px; cursor: pointer; }
 
 .saga-historia-portada {
-  width: 120px;
-  height: 170px;
+  width: 160px;
+  height: 226px;
   border-radius: 7px;
   display: flex;
   align-items: center;

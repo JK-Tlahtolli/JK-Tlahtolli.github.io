@@ -21,7 +21,7 @@
 
 const sagas = [
   {
-    nombre: 'ALTER',
+    nombre: 'El Ciclo del Vacío',
     tabImg: 'imagenes/sagas/LogoSagaALTER_Blanco.png',
     bgImg: 'imagenes/sagas/PortadaSaga_ALTER.png',
     nombreImg: 'imagenes/sagas/TituloSaga_ALTER_Negro.png',
@@ -119,7 +119,7 @@ function moverHistorias() {
   );
   const max = Math.max(0, saga.historias.length - visible);
   hIdx = Math.max(0, Math.min(hIdx, max));
-  pista.style.transform = `translateX(-${hIdx * 130}px)`;
+  pista.style.transform = `translateX(-${hIdx * 170}px)`;
   document.getElementById('saga-prev').disabled = hIdx === 0;
   document.getElementById('saga-next').disabled = hIdx >= max;
 }
