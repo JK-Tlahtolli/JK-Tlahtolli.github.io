@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMBRA El Color de la LUZ — JK-Tlahtolli</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="juego.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="barra">
+    <div class="barra-nav">
+      <a href="../../index.html" class="barra-link">← Inicio</a>
+      <div class="barra-sep"></div>
+      <a href="../index.html" class="barra-link">Juegos</a>
+    </div>
+    <span class="toggle-label">Modo</span>
+    <button class="toggle" id="toggle" aria-label="Cambiar modo">
+      <div class="toggle-circulo"></div>
+    </button>
+  </nav>
+
+  <!-- ================================================
+    BANNER PRINCIPAL
+    Para MOSTRAR el banner: descomenta el bloque de abajo
+    y comenta o elimina el bloque "BANNER DESACTIVADO"
+    
+    Para OCULTAR el banner: comenta o elimina el bloque
+    "BANNER ACTIVADO" y deja solo el "BANNER DESACTIVADO"
+  ================================================= -->
+
+  <!-- BANNER ACTIVADO — descomenta para mostrar:
+  <div class="juego-banner">
+    <img src="imagenes/banner.jpg" alt="Banner del juego">
+  </div>
+  -->
+
+  <!-- BANNER DESACTIVADO — elimina esto cuando actives el banner -->
+  <div class="juego-banner-vacio"></div>
+
+  <!-- ================================================
+    FIN DEL BANNER
+  ================================================= -->
+
+  <div class="juego-body">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="juego-main">
+      <h1 class="juego-titulo-grande">UMBRA: El Color de La LUZ</h1>
+
+      <div class="juego-tags-wrap">
+        <span class="juego-tag-item">RPG</span>
+        <span class="juego-tag-item">Aventura</span>
+        <span class="juego-tag-item">8 Bits</span>
+        <span class="juego-tag-item">Un jugador</span>
+        <!-- Agrega más géneros/tags aquí -->
+      </div>
+
+      <p class="juego-desc">
+        La Luz y la obscuridad se mantienen en equilibrio, hasta que la Luz se revela y conquista todo el mundo, hasta que el heraldo de la obscuridad Umbra despirta para traer el equilibrio de vuelta.
+      </p>
+
+      <!-- CAPTURAS DE PANTALLA -->
+      <p class="juego-seccion-label">Capturas de pantalla</p>
+      <div class="juego-capturas">
+
+        <div class="captura">
+          <!-- Con imagen: <img src="imagenes/captura01.jpg" alt="Captura 1"> -->
+          <div class="captura-placeholder">🖼</div>
+        </div>
+        <div class="captura">
+          <div class="captura-placeholder">🖼</div>
+        </div>
+        <div class="captura">
+          <div class="captura-placeholder">🖼</div>
+        </div>
+        <div class="captura">
+          <div class="captura-placeholder">🖼</div>
+        </div>
+        <div class="captura">
+          <div class="captura-placeholder">🖼</div>
+        </div>
+        <div class="captura">
+          <div class="captura-placeholder">🖼</div>
+        </div>
+
+        <!-- PLANTILLA captura:
+        <div class="captura">
+          <img src="imagenes/capturaXX.jpg" alt="Captura X">
+        </div>
+        -->
+
+      </div>
+
+      <!-- DEVLOG -->
+      <p class="juego-seccion-label">Devlog — Actualizaciones</p>
+      <div class="devlog-lista">
+
+        <div class="devlog-entrada">
+          <p class="devlog-fecha">05 Jul 2026</p>
+          <p class="devlog-titulo">Primera entrada del devlog</p>
+          <p class="devlog-texto">Escribe aquí el avance de desarrollo, qué implementaste, qué problemas encontraste y qué sigue.</p>
+        </div>
+
+        <!-- PLANTILLA devlog:
+        <div class="devlog-entrada">
+          <p class="devlog-fecha">DD Mes AAAA</p>
+          <p class="devlog-titulo">Título de la entrada</p>
+          <p class="devlog-texto">Descripción del avance...</p>
+        </div>
+        -->
+
+      </div>
+    </div>
+
+    <!-- COLUMNA DERECHA — FICHA -->
+    <div class="juego-ficha">
+
+      <div class="ficha-portada">
+        <!-- PORTADA:
+             <img src="imagenes/portada.jpg" alt="Nombre del Juego"> -->
+        🎮
+      </div>
+
+      <!-- BOTÓN DE JUGAR/DEMO -->
+      <!-- Cuando haya demo, reemplaza el botón desactivado por:
+           <a href="URL_DE_LA_DEMO" class="btn-jugar" target="_blank">Jugar demo</a> -->
+      <button class="btn-jugar" disabled>Próximamente</button>
+
+      <div class="ficha-info">
+        <div class="ficha-row">
+          <span class="ficha-key">Estado</span>
+          <span class="ficha-val"><span class="juego-estado en-desarrollo">En desarrollo</span></span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Motor</span>
+          <span class="ficha-val">Godot 4.7.1</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Género</span>
+          <span class="ficha-val">Aventura · Metroidvania</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Plataforma</span>
+          <span class="ficha-val">PC</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Jugadores</span>
+          <span class="ficha-val">1</span>
+        </div>
+        <div class="ficha-row">
+          <span class="ficha-key">Lanzamiento</span>
+          <span class="ficha-val">TBD</span>
+        </div>
+        <!-- Agrega más filas aquí con el mismo patrón -->
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="juego-pie">
+    JK-Tlahtolli · Nombre del Juego
+  </footer>
+
+  <script src="../../script.js"></script>
+</body>
+</html>
