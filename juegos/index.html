@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videojuegos — JK-Tlahtolli</title>
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body { background: #1b2838; color: #c6d4df; }
+
+    .juegos-hero {
+      background: #0e1621;
+      padding: 2.5rem 2rem 2rem;
+      border-bottom: 3px solid #df7126;
+    }
+
+    .juegos-hero-eyebrow {
+      font-size: 10px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: #5a7a94;
+      margin-bottom: .5rem;
+    }
+
+    .juegos-hero-titulo {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 600;
+      color: #c6d4df;
+      margin-bottom: .4rem;
+    }
+
+    .juegos-hero-titulo span { color: #df7126; }
+
+    .juegos-hero-sub {
+      font-size: 14px;
+      color: #5a7a94;
+      font-weight: 300;
+    }
+
+    .juegos-cuerpo { padding: 2rem; }
+
+    .juegos-seccion-label {
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #5a7a94;
+      margin-bottom: 1.2rem;
+    }
+
+    .juegos-catalogo {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .juego-tarjeta {
+      background: #16202d;
+      border: 1px solid #2a3f5f;
+      border-radius: 8px;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .juego-tarjeta:hover { border-color: #df7126; transform: translateY(-3px); }
+
+    .juego-portada {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #0e1621;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      overflow: hidden;
+      border-bottom: 1px solid #2a3f5f;
+    }
+
+    .juego-portada img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .juego-info { padding: .8rem 1rem; }
+
+    .juego-titulo {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: #c6d4df;
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+
+    .juego-meta { display: flex; align-items: center; justify-content: space-between; gap: 6px; flex-wrap: wrap; }
+    .juego-tag { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: #5a7a94; }
+
+    .juego-estado { font-size: 9px; padding: 2px 7px; border-radius: 3px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+    .en-desarrollo { background: rgba(223,113,38,.2); color: #df7126; }
+    .pronto        { background: rgba(100,150,200,.15); color: #6ab3e8; }
+    .completado    { background: rgba(100,200,100,.15); color: #6acf8a; }
+
+    .juegos-pie {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid #2a3f5f;
+      font-size: 11px;
+      color: #3a5570;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="barra">
+    <div class="barra-nav">
+      <a href="../index.html" class="barra-link">← Inicio</a>
+      <div class="barra-sep"></div>
+      <a href="../index.html#historias" class="barra-link">Historias</a>
+    </div>
+    <span class="toggle-label">Modo</span>
+    <button class="toggle" id="toggle" aria-label="Cambiar modo">
+      <div class="toggle-circulo"></div>
+    </button>
+  </nav>
+
+  <header class="juegos-hero">
+    <p class="juegos-hero-eyebrow">Proyectos en desarrollo</p>
+    <h1 class="juegos-hero-titulo">Mis <span>Videojuegos</span></h1>
+    <p class="juegos-hero-sub">Juegos que estoy desarrollando</p>
+  </header>
+
+  <div class="juegos-cuerpo">
+    <p class="juegos-seccion-label">Todos los juegos</p>
+    <div class="juegos-catalogo">
+
+      <a href="juego-ejemplo/index.html" class="juego-tarjeta">
+        <div class="juego-portada">
+          <!-- PORTADA:
+               <img src="juego-ejemplo/imagenes/portada.jpg" alt="Nombre"> -->
+          🎮
+        </div>
+        <div class="juego-info">
+          <p class="juego-titulo">Nombre del Juego</p>
+          <div class="juego-meta">
+            <span class="juego-tag">RPG · Aventura</span>
+            <span class="juego-estado en-desarrollo">En desarrollo</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- PLANTILLA — copia para agregar más juegos:
+      <a href="tu-juego/index.html" class="juego-tarjeta">
+        <div class="juego-portada">
+          <img src="tu-juego/imagenes/portada.jpg" alt="Nombre">
+        </div>
+        <div class="juego-info">
+          <p class="juego-titulo">Título</p>
+          <div class="juego-meta">
+            <span class="juego-tag">Género</span>
+            <span class="juego-estado en-desarrollo">En desarrollo</span>
+          </div>
+        </div>
+      </a>
+      -->
+
+    </div>
+  </div>
+
+  <footer class="juegos-pie">JK-Tlahtolli · Videojuegos</footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

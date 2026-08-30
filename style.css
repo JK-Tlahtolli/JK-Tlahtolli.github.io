@@ -793,3 +793,116 @@ body.oscuro .toggle-circulo { transform: translateX(16px); }
 }
 
 .sin-resultados.visible { display: block; }
+/* ================================================
+   SECCIÓN JUEGOS — agregar al final de style.css
+   ================================================ */
+
+.juegos-wrap {
+  background: #1b2838;
+  padding: 2rem;
+}
+
+.juegos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.juegos-label {
+  font-size: 11px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #5a7a94;
+}
+
+.juegos-ver-todos {
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #df7126;
+  text-decoration: none;
+  transition: opacity .15s;
+}
+
+.juegos-ver-todos:hover { opacity: .75; }
+
+.juegos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.juego-tarjeta {
+  background: #16202d;
+  border: 1px solid #2a3f5f;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .2s, transform .2s;
+}
+
+.juego-tarjeta:hover {
+  border-color: #df7126;
+  transform: translateY(-3px);
+}
+
+.juego-portada {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #0e1621;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  overflow: hidden;
+  border-bottom: 1px solid #2a3f5f;
+}
+
+.juego-portada img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.juego-info { padding: .8rem 1rem; }
+
+.juego-titulo {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #c6d4df;
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
+.juego-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.juego-tag {
+  font-size: 9px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #5a7a94;
+}
+
+.juego-estado {
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.en-desarrollo { background: rgba(223,113,38,.2); color: #df7126; }
+.pronto        { background: rgba(100,150,200,.15); color: #6ab3e8; }
+.completado    { background: rgba(100,200,100,.15); color: #6acf8a; }
